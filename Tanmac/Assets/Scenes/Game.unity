@@ -1109,7 +1109,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: Dificalty
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: BulletPool
@@ -1182,7 +1182,7 @@ PrefabInstance:
     - target: {fileID: 7763806323061067625, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: 384022963, guid: c88b6294312654e45b5d93632d138899, type: 3}
     - target: {fileID: 8509984418612693344, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Name
       value: BulletSpawnerM0
@@ -1315,7 +1315,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: Dificalty
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: BulletPool
@@ -1388,7 +1388,7 @@ PrefabInstance:
     - target: {fileID: 7763806323061067625, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: 384022963, guid: c88b6294312654e45b5d93632d138899, type: 3}
     - target: {fileID: 8509984418612693344, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Name
       value: BulletSpawnerR
@@ -1580,7 +1580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: Dificalty
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: BulletPool
@@ -1653,7 +1653,7 @@ PrefabInstance:
     - target: {fileID: 7763806323061067625, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: 384022963, guid: c88b6294312654e45b5d93632d138899, type: 3}
     - target: {fileID: 8509984418612693344, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Name
       value: BulletSpawnerM1
@@ -2748,7 +2748,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: Dificalty
-      value: 4
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3604916952454212085, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: BulletPool
@@ -2821,7 +2821,7 @@ PrefabInstance:
     - target: {fileID: 7763806323061067625, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
+      objectReference: {fileID: 384022963, guid: c88b6294312654e45b5d93632d138899, type: 3}
     - target: {fileID: 8509984418612693344, guid: a2468db9834c90f449d3139922dcd390, type: 3}
       propertyPath: m_Name
       value: BulletSpawnerL
