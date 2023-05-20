@@ -9,16 +9,20 @@ using UnityEngine.WSA;
 
 public class Bullet : MonoBehaviour
 {
-    private BulletSpawner _bulletSpawner;
-    private float _speed;
-    private float _dietime = 5f;
+    private BulletPoolManager _bulletPoolManager;
+    private float _speed = 0;
+    private float _dietime = 10f;
     private Coroutine _distroyer;
 
-    public void SetBullet(BulletSpawner spawner, float bulletSpeed, float bulletdietime)
+    public void SetBullet(float bulletSpeed, float bulletdietime)
     {
-        _bulletSpawner = spawner;
         _speed = bulletSpeed;
         _dietime = bulletdietime;
+    }
+
+    public void SetPoolManager(BulletPoolManager bulletPoolManager)
+    { 
+        _bulletPoolManager = bulletPoolManager;
     }
 
     public void TimeLimit()
@@ -36,7 +40,7 @@ public class Bullet : MonoBehaviour
         if (col.CompareTag("Wall") || col.CompareTag("Player"))
         {
             StopCoroutine(_distroyer);
-            _bulletSpawner.AddBullet2List(this.gameObject);
+            _bulletPoolManager.AddBullet2List(this.gameObject);
         }
     }
 
@@ -44,6 +48,6 @@ public class Bullet : MonoBehaviour
     IEnumerator DieOnTime()
     {
         yield return new WaitForSeconds(_dietime);
-        _bulletSpawner.AddBullet2List(this.gameObject);
+        _bulletPoolManager.AddBullet2List(this.gameObject);
     }
 }

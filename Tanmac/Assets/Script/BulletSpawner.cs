@@ -9,66 +9,58 @@ namespace Script
 {
     public class BulletSpawner : MonoBehaviour
     {
-        public GameObject bullet;
-        public GameObject BulletPool;
-        public int bullet_cnt = 100;
-        
         [SerializeField] private int Dificalty = 6;
-        [SerializeField] private List<GameObject> _bulletObjects;
         [SerializeField] private float spawnDelay;
         [SerializeField] private float BulletSpeed;
         [SerializeField] private float BulletDieTime;
+        [SerializeField] private GameObject BulletPoolObj;
+        private BulletPoolManager _bulletPoolManager;
         private WaitForSeconds _wait;
+        private float _gametime;
+
         void Start()
         {
-            _bulletObjects = new List<GameObject>();
+            _gametime = 0;
+            _bulletPoolManager = BulletPoolObj.GetComponent<BulletPoolManager>();
             _wait = new WaitForSeconds(spawnDelay);
-            for (int i = 0; i < bullet_cnt; i++)
-            {
-                var newBullet = Instantiate(bullet, BulletPool.transform, true);
-                _bulletObjects.Add(newBullet);
-                newBullet.GetComponent<Bullet>().SetBullet(this, BulletSpeed, BulletDieTime);
-                newBullet.SetActive(false);
-            }
             StartCoroutine(SpawnBullet());
-        }
-
-        public void AddBullet2List(GameObject obj)
-        {
-            obj.SetActive(false);
-            _bulletObjects.Add(obj);
-        }
-        private GameObject BulletFind()
-        {
-            if (_bulletObjects.Count == 0)
-            {
-                var newBullet = Instantiate(bullet, BulletPool.transform, true);
-                newBullet.GetComponent<Bullet>().SetBullet(this, BulletSpeed, BulletDieTime);
-                return newBullet;
-            }
-            GameObject returnObj = _bulletObjects[0];
-            _bulletObjects.Remove(returnObj);
-            return returnObj;
         }
 
         private void setBullet(float angle)
         {
-            GameObject spawnObject = BulletFind();
+            GameObject spawnObject = _bulletPoolManager.BulletFind();
             spawnObject.SetActive(true);
+            spawnObject.GetComponent<Bullet>().SetBullet(BulletSpeed, BulletDieTime);
             spawnObject.transform.position = this.transform.position;
             spawnObject.transform.rotation = this.transform.rotation;
             spawnObject.transform.Rotate(Vector3.forward * angle);
             spawnObject.GetComponent<Bullet>().TimeLimit();
         }
-        
+
+        public void AddDificalty(int deficalty)
+        {
+            Dificalty += deficalty;
+        }
+        private void Update()
+        {
+            _gametime += Time.deltaTime;
+            if (_gametime >= 60)
+            {
+                _gametime = 0;
+                Dificalty += 1;
+            }
+        }
         IEnumerator SpawnBullet()
         {
             while (true)
             {
-                for (int i = 0; i <= 180; i += 180 / Dificalty)
+                if (Dificalty <= 0)
+                    Dificalty = 60;
+                for (float i = 0; i <= 180; i += 180 / (float)Dificalty)
                 {
                     setBullet(i);
                 }
+                BulletSpeed += 0.01f;
                 yield return _wait;
             }
         }
