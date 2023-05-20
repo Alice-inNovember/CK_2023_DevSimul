@@ -44,7 +44,7 @@ namespace Script
         private void Update()
         {
             _gametime += Time.deltaTime;
-            if (_gametime >= 60)
+            if (_gametime >= 30)
             {
                 _gametime = 0;
                 Dificalty += 1;
@@ -55,7 +55,9 @@ namespace Script
             while (true)
             {
                 if (Dificalty <= 0)
-                    Dificalty = 60;
+                    Dificalty = 30;
+                if (Dificalty > 30)
+                    Dificalty = 1;
                 for (float i = 0; i <= 180; i += 180 / (float)Dificalty)
                 {
                     setBullet(i);
